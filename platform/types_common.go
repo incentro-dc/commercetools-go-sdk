@@ -1066,11 +1066,11 @@ type HighPrecisionMoneyDraft struct {
 	//
 	// * cents for EUR and USD, pence for GBP, or centime for CHF (5 CHF is specified as 500).
 	// * the value in the major unit for currencies without minor units, like JPY (5 JPY is specified as 5).
-	CentAmount int `json:"centAmount"`
+	CentAmount *int `json:"centAmount"`
 	// The currency code compliant to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
 	CurrencyCode string `json:"currencyCode"`
 	// Must be equal to the default number of fraction digits for the specified currency.
-	FractionDigits *int `json:"fractionDigits,omitempty"`
+	FractionDigits int `json:"fractionDigits"`
 	// amount in 1 / (10 ^ `fractionDigits`) of a currency.
 	PreciseAmount int `json:"preciseAmount"`
 }
