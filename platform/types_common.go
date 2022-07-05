@@ -241,7 +241,7 @@ func (obj *DiscountedPrice) UnmarshalJSON(data []byte) error {
 type DiscountedPriceDraft struct {
 	// Draft type that stores amounts in cent precision for the specified currency.
 	// For storing money values in fractions of the minor unit in a currency, use [HighPrecisionMoneyDraft](ctp:api:type:HighPrecisionMoneyDraft) instead.
-	Value    Money                    `json:"value"`
+	Value    TypedMoney               `json:"value"`
 	Discount ProductDiscountReference `json:"discount"`
 }
 
